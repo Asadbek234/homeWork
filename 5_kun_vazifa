@@ -1,1 +1,13 @@
+class Mytuple:
+    def __init__(self,*args):
+        self.args =args
 
+    def __getitem__(self,key):
+        assert isinstance(key,int), "key ERROR"
+        if key>len(self.args)-1: 
+            raise IndexError("Index out of range")
+        return self.args[key]
+    def __str__(self):
+        return f"{self.args}"
+
+class MyList:
